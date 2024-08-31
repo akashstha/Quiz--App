@@ -1,5 +1,9 @@
+
+import java.util.Scanner;
+
 public class QuestionServices {
     Questions[] questions = new Questions[5];
+    String selection [] = new String[5];
   public QuestionServices(){
       questions[0] = new Questions(1,"Which of the following planets is known for having a prominent ring system?","Mars","Jupiter","Saturn","Neptune","Saturn"); 
       questions[1] = new Questions(2,"What is the chemical symbol for the element Gold?","Au","Ag","Pb","Fe","Au"); 
@@ -9,12 +13,28 @@ public class QuestionServices {
     
 
   }
-    
-    public void show(){
 
+  
+  public void playQuiz(){
+
+            int i = 0;
+      
         for(Questions q : questions){
 
-            System.out.println(q);
+            System.out.println("Questio no. : "+q.getId());
+            System.out.println(q.getQuestions());
+            System.out.println("Option 1 : " + q.getOption1());
+            System.out.println("Option 2 : " + q.getOption2());
+            System.out.println("Option 3 : " + q.getOption3());
+            System.out.println("Option 4 : " + q.getOption4());
+            Scanner sc = new Scanner(System.in);
+            selection[i] = sc.nextLine();
+            i++;
+        }
+        int j = 1;
+        for(String s: selection){
+            System.out.println("Your Answers for Question no. " + j + "is : " + s);
+
         }
     }
 }
