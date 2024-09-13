@@ -31,10 +31,32 @@ public class QuestionServices {
             selection[i] = sc.nextLine();
             i++;
         }
-        int j = 1;
-        for(String s: selection){
-            System.out.println("Your Answers for Question no. " + j + "is : " + s);
+        
+        for(String s : selection){
+            
+            System.out.println("Results " + s);
+        }
+
+
+      
+        
+    }
+
+    public void calculateScore(){
+    int score = 0;
+    for(int i = 0;i <questions.length ;i++){
+            Questions ques = questions[i];
+            String originalAnswer = ques.getAnswer();
+            String userAnswer = selection[i];
+
+            //compare
+            if(originalAnswer.equals(userAnswer)){
+                score++;
+            }
 
         }
-    }
+        System.out.println("Users Score is :" + score);
 }
+}
+
+
